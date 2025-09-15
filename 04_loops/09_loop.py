@@ -6,13 +6,13 @@ users = [
     { "id":3, "total":156,"coupons":"acd129"},
     ]
 
-discount ={
+discounts ={
     "acd123":(0.4,0),
     "acd126":(0.6,0),
     "acd129":(0,20),
 }
 
 for user in users:
-    percent,flat = discount.get(user["coupons"],(0,0))
+    percent,flat = discounts.get(user["coupons"],(0,0))
     discount = user["total"]*percent + flat
     print(f"User {user['id']} has a discount of {discount}")
